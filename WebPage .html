@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Welfare | Save Lives</title>
+    <!-- Google Font for cursive headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Apply cursive font to headings */
+        h1, h2, h3 {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        /* Increased font size for headings */
+        h1 {
+            font-size: 4rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        h3 {
+            font-size: 2.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('images/hero-bg.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 0.5s forwards;
+        }
+
+        .cta-button {
+            background-color: #ff6b6b;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 30px;
+            display: inline-block;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #ff3b3b;
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        /* Sticky Navbar */
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #ff6b6b;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+
+        .about h2 {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .about h2::after {
+            content: '';
+            width: 50px;
+            height: 5px;
+            background-color: #00796b;
+            display: block;
+            margin: 10px auto;
+        }
+
+        /* Featured Animals Section */
+        .featured-animals {
+            padding: 60px 20px;
+            background-color: #fdfdfd;
+            text-align: center;
+        }
+
+        .animal-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .animal-card {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 250px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animal-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animal-card:hover img {
+            transform: scale(1.1); /* Slight zoom effect */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Optional shadow on hover */
+        }
+
+        .adopt-button {
+            background-color: #00796b;
+            color: white;
+            padding: 8px;
+            margin-top: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .adopt-button:hover {
+            background-color: #004d40;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        footer a {
+            color: #ff6b6b;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #ff3b3b;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#animals">Adopt</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <h1>Save Lives, Spread Love</h1>
+        <p>Be a voice for the voiceless. Support animal welfare today.</p>
+        <a href="#about" class="cta-button">Learn More</a>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to rescuing, protecting, and finding loving homes for animals. We are also an NGO and help in rescuing stray animals from various harmful and traumatic situations. Our mission is to provide a safe and loving environment for every animal, ensuring they find a forever home.</p>
+    </section>
+
+    <!-- Featured Animals Section -->
+    <section id="animals" class="featured-animals">
+        <h2>Animals Available for Adoption</h2>
+        <div class="animal-grid">
+            <div class="animal-card">
+                <img src="images/cat.jpeg" alt="Cute Cat">
+                <p>Name: Whiskers</p>
+                <a href="#" class="adopt-button" onclick="triggerConfetti()">Adopt Me</a>
+            </div>
+            <div class="animal-card">
+                <img src="images/dog.jpg" alt="Friendly Dog">
+                <p>Name: Buddy</p>
+                <a href="#" class="adopt-button" onclick="triggerConfetti()">Adopt Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Animal Welfare | Follow us on 
+            <a href="#">Instagram</a>, <a href="#">Facebook</a>, <a href="#">Twitter</a>
+        </p>
+    </footer>
+
+    <script>
+        // Confetti function
+        function triggerConfetti() {
+            confetti({
+                particleCount: 150,
+                spread: 70,
+                origin: { x: 0.5, y: 0.5 }
+            });
+        }
+    </script>
+</body>
+</html>
